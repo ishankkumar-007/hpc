@@ -1,0 +1,50 @@
+likwid-perfctr -C S0:0 -g L2 -m ./a.out
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Core(TM) i7-9700 CPU @ 3.00GHz
+CPU type:	Intel Coffeelake processor
+CPU clock:	3.00 GHz
+--------------------------------------------------------------------------------
+Enter the path to the text file: grids/ten_k.txt
+
+Enter the x-coord (row) of starting point: 0
+
+Enter the y-coord (col) of starting point: 0
+
+Enter the x-coord (row) of goal point: 9999
+
+Enter the y-coord (col) of goal point: 9999
+
+--------------------------------------------------------------------------------
+Region solution, Group 1: L2
++-------------------+------------+
+|    Region Info    | HWThread 0 |
++-------------------+------------+
+| RDTSC Runtime [s] |   3.442404 |
+|     call count    |          1 |
++-------------------+------------+
+
++-----------------------+---------+-------------+
+|         Event         | Counter |  HWThread 0 |
++-----------------------+---------+-------------+
+|   INSTR_RETIRED_ANY   |  FIXC0  | 26638480000 |
+| CPU_CLK_UNHALTED_CORE |  FIXC1  | 13199760000 |
+|  CPU_CLK_UNHALTED_REF |  FIXC2  |  8660356000 |
+|    L1D_REPLACEMENT    |   PMC0  |    12504270 |
+|      L1D_M_EVICT      |   PMC1  |     4105375 |
+| ICACHE_64B_IFTAG_MISS |   PMC2  |     1826495 |
++-----------------------+---------+-------------+
+
++--------------------------------+------------+
+|             Metric             | HWThread 0 |
++--------------------------------+------------+
+|       Runtime (RDTSC) [s]      |     3.4424 |
+|      Runtime unhalted [s]      |     4.4001 |
+|           Clock [MHz]          |  4572.3280 |
+|               CPI              |     0.4955 |
+|  L2D load bandwidth [MBytes/s] |   232.4751 |
+|  L2D load data volume [GBytes] |     0.8003 |
+| L2D evict bandwidth [MBytes/s] |    76.3257 |
+| L2D evict data volume [GBytes] |     0.2627 |
+|     L2 bandwidth [MBytes/s]    |   342.7584 |
+|     L2 data volume [GBytes]    |     1.1799 |
++--------------------------------+------------+

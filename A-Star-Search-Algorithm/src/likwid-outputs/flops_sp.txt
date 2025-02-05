@@ -1,0 +1,51 @@
+likwid-perfctr -C S0:0 -g FLOPS_SP -m ./a.out
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Core(TM) i7-9700 CPU @ 3.00GHz
+CPU type:	Intel Coffeelake processor
+CPU clock:	3.00 GHz
+--------------------------------------------------------------------------------
+Enter the path to the text file: grids/ten_k.txt
+
+Enter the x-coord (row) of starting point: 0
+
+Enter the y-coord (col) of starting point: 0
+
+Enter the x-coord (row) of goal point: 9999
+
+Enter the y-coord (col) of goal point: 9999
+
+--------------------------------------------------------------------------------
+ERROR - [/home/mpiu/likwid/src/perfmon.c:perfmon_getMetricOfRegionThread:4038] Success.
+Cannot calculate formula 100*(PMC0+PMC2)/(PMC0+PMC1+PMC2)
+Region solution, Group 1: FLOPS_SP
++-------------------+------------+
+|    Region Info    | HWThread 0 |
++-------------------+------------+
+| RDTSC Runtime [s] |   3.219290 |
+|     call count    |          1 |
++-------------------+------------+
+
++------------------------------------------+---------+-------------+
+|                   Event                  | Counter |  HWThread 0 |
++------------------------------------------+---------+-------------+
+|             INSTR_RETIRED_ANY            |  FIXC0  | 26638470000 |
+|           CPU_CLK_UNHALTED_CORE          |  FIXC1  | 13177200000 |
+|           CPU_CLK_UNHALTED_REF           |  FIXC2  |  8635542000 |
+| FP_ARITH_INST_RETIRED_128B_PACKED_SINGLE |   PMC0  |           0 |
+|    FP_ARITH_INST_RETIRED_SCALAR_SINGLE   |   PMC1  |           0 |
+| FP_ARITH_INST_RETIRED_256B_PACKED_SINGLE |   PMC2  |           0 |
++------------------------------------------+---------+-------------+
+
++-------------------------+------------+
+|          Metric         | HWThread 0 |
++-------------------------+------------+
+|   Runtime (RDTSC) [s]   |     3.2193 |
+|   Runtime unhalted [s]  |     4.3925 |
+|       Clock [MHz]       |  4577.6695 |
+|           CPI           |     0.4947 |
+|       SP [MFLOP/s]      |          0 |
+|     AVX SP [MFLOP/s]    |          0 |
+|     Packed [MUOPS/s]    |          0 |
+|     Scalar [MUOPS/s]    |          0 |
+| Vectorization ratio [%] |          0 |
++-------------------------+------------+

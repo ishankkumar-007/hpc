@@ -1,0 +1,49 @@
+likwid-perfctr -C S0:0 -g ICACHE -m ./a.out
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Core(TM) i7-9700 CPU @ 3.00GHz
+CPU type:	Intel Coffeelake processor
+CPU clock:	3.00 GHz
+--------------------------------------------------------------------------------
+Enter the path to the text file: grids/ten_k.txt
+
+Enter the x-coord (row) of starting point: 0
+
+Enter the y-coord (col) of starting point: 0
+
+Enter the x-coord (row) of goal point: 9999
+
+Enter the y-coord (col) of goal point: 9999
+
+--------------------------------------------------------------------------------
+Region solution, Group 1: ICACHE
++-------------------+------------+
+|    Region Info    | HWThread 0 |
++-------------------+------------+
+| RDTSC Runtime [s] |   3.227809 |
+|     call count    |          1 |
++-------------------+------------+
+
++------------------------+---------+-------------+
+|          Event         | Counter |  HWThread 0 |
++------------------------+---------+-------------+
+|    INSTR_RETIRED_ANY   |  FIXC0  | 26638480000 |
+|  CPU_CLK_UNHALTED_CORE |  FIXC1  | 13160220000 |
+|  CPU_CLK_UNHALTED_REF  |  FIXC2  |  8633301000 |
+|  ICACHE_64B_IFTAG_ALL  |   PMC0  |  4918808000 |
+|  ICACHE_64B_IFTAG_MISS |   PMC1  |     1483530 |
+| ICACHE_64B_IFTAG_STALL |   PMC2  |   106920700 |
++------------------------+---------+-------------+
+
++----------------------+------------+
+|        Metric        | HWThread 0 |
++----------------------+------------+
+|  Runtime (RDTSC) [s] |     3.2278 |
+| Runtime unhalted [s] |     4.3869 |
+|      Clock [MHz]     |  4572.9235 |
+|          CPI         |     0.4940 |
+|   L1I request rate   |     0.1847 |
+|     L1I miss rate    |     0.0001 |
+|    L1I miss ratio    |     0.0003 |
+|      L1I stalls      |  106920700 |
+|    L1I stall rate    |     0.0040 |
++----------------------+------------+

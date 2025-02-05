@@ -1,0 +1,46 @@
+likwid-perfctr -C S0:0 -g TLB_INSTR -m ./a.out
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Core(TM) i7-9700 CPU @ 3.00GHz
+CPU type:	Intel Coffeelake processor
+CPU clock:	3.00 GHz
+--------------------------------------------------------------------------------
+Enter the path to the text file: grids/ten_k.txt
+
+Enter the x-coord (row) of starting point: 0
+0
+Enter the y-coord (col) of starting point: 
+
+Enter the x-coord (row) of goal point: 9999
+
+Enter the y-coord (col) of goal point: 9999
+
+--------------------------------------------------------------------------------
+Region solution, Group 1: TLB_INSTR
++-------------------+------------+
+|    Region Info    | HWThread 0 |
++-------------------+------------+
+| RDTSC Runtime [s] |   3.078359 |
+|     call count    |          1 |
++-------------------+------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter |  HWThread 0 |
++---------------------------+---------+-------------+
+|     INSTR_RETIRED_ANY     |  FIXC0  | 26638480000 |
+|   CPU_CLK_UNHALTED_CORE   |  FIXC1  | 13166400000 |
+|    CPU_CLK_UNHALTED_REF   |  FIXC2  |  8607766000 |
+| ITLB_MISSES_CAUSES_A_WALK |   PMC0  |      347062 |
+|  ITLB_MISSES_WALK_ACTIVE  |   PMC1  |     7646492 |
++---------------------------+---------+-------------+
+
++-----------------------------+--------------+
+|            Metric           |  HWThread 0  |
++-----------------------------+--------------+
+|     Runtime (RDTSC) [s]     |       3.0784 |
+|     Runtime unhalted [s]    |       4.3889 |
+|         Clock [MHz]         |    4588.7094 |
+|             CPI             |       0.4943 |
+|        L1 ITLB misses       |       347062 |
+|      L1 ITLB miss rate      | 1.302860e-05 |
+| L1 ITLB miss duration [Cyc] |      22.0321 |
++-----------------------------+--------------+
