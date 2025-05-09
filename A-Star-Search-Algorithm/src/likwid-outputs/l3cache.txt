@@ -1,0 +1,47 @@
+likwid-perfctr -C S0:0 -g L3CACHE -m ./a.out
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Core(TM) i7-9700 CPU @ 3.00GHz
+CPU type:	Intel Coffeelake processor
+CPU clock:	3.00 GHz
+--------------------------------------------------------------------------------
+Enter the path to the text file: grids/ten_k.txt
+
+Enter the x-coord (row) of starting point: 0
+
+Enter the y-coord (col) of starting point: 0
+
+Enter the x-coord (row) of goal point: 9999
+
+Enter the y-coord (col) of goal point: 9999
+
+--------------------------------------------------------------------------------
+Region solution, Group 1: L3CACHE
++-------------------+------------+
+|    Region Info    | HWThread 0 |
++-------------------+------------+
+| RDTSC Runtime [s] |   3.220736 |
+|     call count    |          1 |
++-------------------+------------+
+
++--------------------------+---------+-------------+
+|           Event          | Counter |  HWThread 0 |
++--------------------------+---------+-------------+
+|     INSTR_RETIRED_ANY    |  FIXC0  | 26638470000 |
+|   CPU_CLK_UNHALTED_CORE  |  FIXC1  | 13398410000 |
+|   CPU_CLK_UNHALTED_REF   |  FIXC2  |  8766427000 |
+|  MEM_LOAD_RETIRED_L3_HIT |   PMC0  |       80161 |
+| MEM_LOAD_RETIRED_L3_MISS |   PMC1  |      225573 |
+|     UOPS_RETIRED_ALL     |   PMC2  | 40110270000 |
++--------------------------+---------+-------------+
+
++----------------------+--------------+
+|        Metric        |  HWThread 0  |
++----------------------+--------------+
+|  Runtime (RDTSC) [s] |       3.2207 |
+| Runtime unhalted [s] |       4.4663 |
+|      Clock [MHz]     |    4584.9480 |
+|          CPI         |       0.5030 |
+|    L3 request rate   | 7.622337e-06 |
+|     L3 miss rate     | 5.623822e-06 |
+|     L3 miss ratio    |       0.7378 |
++----------------------+--------------+

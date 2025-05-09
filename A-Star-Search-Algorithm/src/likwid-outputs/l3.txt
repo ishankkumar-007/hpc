@@ -1,0 +1,49 @@
+likwid-perfctr -C S0:0 -g L3 -m ./a.out
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Core(TM) i7-9700 CPU @ 3.00GHz
+CPU type:	Intel Coffeelake processor
+CPU clock:	3.00 GHz
+--------------------------------------------------------------------------------
+Enter the path to the text file: grids/ten_k.txt
+
+Enter the x-coord (row) of starting point: 0
+
+Enter the y-coord (col) of starting point: 0
+
+Enter the x-coord (row) of goal point: 9999
+
+Enter the y-coord (col) of goal point: 9999
+
+--------------------------------------------------------------------------------
+Region solution, Group 1: L3
++-------------------+------------+
+|    Region Info    | HWThread 0 |
++-------------------+------------+
+| RDTSC Runtime [s] |   3.228287 |
+|     call count    |          1 |
++-------------------+------------+
+
++-----------------------+---------+-------------+
+|         Event         | Counter |  HWThread 0 |
++-----------------------+---------+-------------+
+|   INSTR_RETIRED_ANY   |  FIXC0  | 26638470000 |
+| CPU_CLK_UNHALTED_CORE |  FIXC1  | 13204560000 |
+|  CPU_CLK_UNHALTED_REF |  FIXC2  |  8685898000 |
+|    L2_LINES_IN_ALL    |   PMC0  |     7968794 |
+|     L2_TRANS_L2_WB    |   PMC1  |     5336798 |
++-----------------------+---------+-------------+
+
++-------------------------------+------------+
+|             Metric            | HWThread 0 |
++-------------------------------+------------+
+|      Runtime (RDTSC) [s]      |     3.2283 |
+|      Runtime unhalted [s]     |     4.4016 |
+|          Clock [MHz]          |  4560.6033 |
+|              CPI              |     0.4957 |
+|  L3 load bandwidth [MBytes/s] |   157.9794 |
+|  L3 load data volume [GBytes] |     0.5100 |
+| L3 evict bandwidth [MBytes/s] |   105.8007 |
+| L3 evict data volume [GBytes] |     0.3416 |
+|    L3 bandwidth [MBytes/s]    |   263.7801 |
+|    L3 data volume [GBytes]    |     0.8516 |
++-------------------------------+------------+

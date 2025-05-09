@@ -28,7 +28,8 @@
 
 # Executables
 *.exe
-# *.out
+*.out
+!src/gprof outputs/*.out
 *.app
 
 # vscode

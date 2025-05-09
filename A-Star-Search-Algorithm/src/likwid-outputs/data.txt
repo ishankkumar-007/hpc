@@ -1,0 +1,43 @@
+likwid-perfctr -C S0:0 -g DATA -m ./a.out--------------------------------------------------------------------------------
+CPU name:	Intel(R) Core(TM) i7-9700 CPU @ 3.00GHz
+CPU type:	Intel Coffeelake processor
+CPU clock:	3.00 GHz
+--------------------------------------------------------------------------------
+Enter the path to the text file: grids/ten_k.txt
+
+Enter the x-coord (row) of starting point: 0
+
+Enter the y-coord (col) of starting point: 0
+
+Enter the x-coord (row) of goal point: 9999
+
+Enter the y-coord (col) of goal point: 9999
+
+--------------------------------------------------------------------------------
+Region solution, Group 1: DATA
++-------------------+------------+
+|    Region Info    | HWThread 0 |
++-------------------+------------+
+| RDTSC Runtime [s] |   3.354953 |
+|     call count    |          1 |
++-------------------+------------+
+
++-----------------------------+---------+-------------+
+|            Event            | Counter |  HWThread 0 |
++-----------------------------+---------+-------------+
+|      INSTR_RETIRED_ANY      |  FIXC0  | 26638470000 |
+|    CPU_CLK_UNHALTED_CORE    |  FIXC1  | 13169780000 |
+|     CPU_CLK_UNHALTED_REF    |  FIXC2  |  8668366000 |
+|  MEM_INST_RETIRED_ALL_LOADS |   PMC0  |  9520324000 |
+| MEM_INST_RETIRED_ALL_STORES |   PMC1  |  7395731000 |
++-----------------------------+---------+-------------+
+
++----------------------+------------+
+|        Metric        | HWThread 0 |
++----------------------+------------+
+|  Runtime (RDTSC) [s] |     3.3550 |
+| Runtime unhalted [s] |     4.3901 |
+|      Clock [MHz]     |  4557.6798 |
+|          CPI         |     0.4944 |
+|  Load to store ratio |     1.2873 |
++----------------------+------------+

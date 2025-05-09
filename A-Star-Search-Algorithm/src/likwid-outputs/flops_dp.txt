@@ -1,0 +1,49 @@
+likwid-perfctr -C S0:0 -g FLOPS_DP -m ./a.out
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Core(TM) i7-9700 CPU @ 3.00GHz
+CPU type:	Intel Coffeelake processor
+CPU clock:	3.00 GHz
+--------------------------------------------------------------------------------
+Enter the path to the text file: grids/ten_k.txt
+
+Enter the x-coord (row) of starting point: 0
+
+Enter the y-coord (col) of starting point: 0
+
+Enter the x-coord (row) of goal point: 9999
+
+Enter the y-coord (col) of goal point: 9999
+
+--------------------------------------------------------------------------------
+Region solution, Group 1: FLOPS_DP
++-------------------+------------+
+|    Region Info    | HWThread 0 |
++-------------------+------------+
+| RDTSC Runtime [s] |   3.284166 |
+|     call count    |          1 |
++-------------------+------------+
+
++------------------------------------------+---------+-------------+
+|                   Event                  | Counter |  HWThread 0 |
++------------------------------------------+---------+-------------+
+|             INSTR_RETIRED_ANY            |  FIXC0  | 26638470000 |
+|           CPU_CLK_UNHALTED_CORE          |  FIXC1  | 13220730000 |
+|           CPU_CLK_UNHALTED_REF           |  FIXC2  |  8792490000 |
+| FP_ARITH_INST_RETIRED_128B_PACKED_DOUBLE |   PMC0  |           0 |
+|    FP_ARITH_INST_RETIRED_SCALAR_DOUBLE   |   PMC1  |          10 |
+| FP_ARITH_INST_RETIRED_256B_PACKED_DOUBLE |   PMC2  |           0 |
++------------------------------------------+---------+-------------+
+
++-------------------------+--------------+
+|          Metric         |  HWThread 0  |
++-------------------------+--------------+
+|   Runtime (RDTSC) [s]   |       3.2842 |
+|   Runtime unhalted [s]  |       4.4070 |
+|       Clock [MHz]       |    4510.8323 |
+|           CPI           |       0.4963 |
+|       DP [MFLOP/s]      | 3.044913e-06 |
+|     AVX DP [MFLOP/s]    |            0 |
+|     Packed [MUOPS/s]    |            0 |
+|     Scalar [MUOPS/s]    | 3.044913e-06 |
+| Vectorization ratio [%] |            0 |
++-------------------------+--------------+

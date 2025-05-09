@@ -1,0 +1,55 @@
+likwid-perfctr -C S0:0 -g ENERGY -m ./a.out
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Core(TM) i7-9700 CPU @ 3.00GHz
+CPU type:	Intel Coffeelake processor
+CPU clock:	3.00 GHz
+--------------------------------------------------------------------------------
+Enter the path to the text file: grids/ten_k.txt
+
+Enter the x-coord (row) of starting point: 0
+
+Enter the y-coord (col) of starting point: 0
+
+Enter the x-coord (row) of goal point: 9999
+
+Enter the y-coord (col) of goal point: 9999
+
+--------------------------------------------------------------------------------
+Region solution, Group 1: ENERGY
++-------------------+------------+
+|    Region Info    | HWThread 0 |
++-------------------+------------+
+| RDTSC Runtime [s] |   3.156841 |
+|     call count    |          1 |
++-------------------+------------+
+
++-----------------------+---------+-------------+
+|         Event         | Counter |  HWThread 0 |
++-----------------------+---------+-------------+
+|   INSTR_RETIRED_ANY   |  FIXC0  | 26638480000 |
+| CPU_CLK_UNHALTED_CORE |  FIXC1  | 13193230000 |
+|  CPU_CLK_UNHALTED_REF |  FIXC2  |  8675293000 |
+|       TEMP_CORE       |   TMP0  |          55 |
+|     PWR_PKG_ENERGY    |   PWR0  |     76.9039 |
+|     PWR_PP0_ENERGY    |   PWR1  |     71.5108 |
+|     PWR_PP1_ENERGY    |   PWR2  |           0 |
+|    PWR_DRAM_ENERGY    |   PWR3  |      1.9756 |
++-----------------------+---------+-------------+
+
++----------------------+------------+
+|        Metric        | HWThread 0 |
++----------------------+------------+
+|  Runtime (RDTSC) [s] |     3.1568 |
+| Runtime unhalted [s] |     4.3938 |
+|      Clock [MHz]     |  4566.4570 |
+|          CPI         |     0.4953 |
+|    Temperature [C]   |         55 |
+|      Energy [J]      |    76.9039 |
+|       Power [W]      |    24.3610 |
+|    Energy PP0 [J]    |    71.5108 |
+|     Power PP0 [W]    |    22.6526 |
+|    Energy PP1 [J]    |          0 |
+|     Power PP1 [W]    |          0 |
+|    Energy DRAM [J]   |     1.9756 |
+|    Power DRAM [W]    |     0.6258 |
++----------------------+------------+

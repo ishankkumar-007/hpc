@@ -1,0 +1,45 @@
+likwid-perfctr -C S0:0 -g PERF -m ./a.out--------------------------------------------------------------------------------
+CPU name:	Intel(R) Core(TM) i7-9700 CPU @ 3.00GHz
+CPU type:	Intel Coffeelake processor
+CPU clock:	3.00 GHz
+--------------------------------------------------------------------------------
+Enter the path to the text file: grids/ten_k.txt          
+
+Enter the x-coord (row) of starting point: 0
+
+Enter the y-coord (col) of starting point: 0
+
+Enter the x-coord (row) of goal point: 9999
+
+Enter the y-coord (col) of goal point: 9999
+
+--------------------------------------------------------------------------------
+Region solution, Group 1: PERF
++-------------------+------------+
+|    Region Info    | HWThread 0 |
++-------------------+------------+
+| RDTSC Runtime [s] |   3.122966 |
+|     call count    |          1 |
++-------------------+------------+
+
++-----------------------+---------+-------------+
+|         Event         | Counter |  HWThread 0 |
++-----------------------+---------+-------------+
+|   INSTR_RETIRED_ANY   |  FIXC0  | 26638480000 |
+| CPU_CLK_UNHALTED_CORE |  FIXC1  | 13176230000 |
+|  CPU_CLK_UNHALTED_REF |  FIXC2  |  8619183000 |
+|         MPERF         |  MPERF  |  9244740000 |
+|         APERF         |  APERF  | 14156160000 |
+|         PPERF         |  PPERF  | 14034500000 |
++-----------------------+---------+-------------+
+
++----------------------+------------+
+|        Metric        | HWThread 0 |
++----------------------+------------+
+|  Runtime (RDTSC) [s] |     3.1230 |
+| Runtime unhalted [s] |     4.3897 |
+|      Clock [MHz]     |  4588.6248 |
+|          CPI         |     0.4946 |
+|    Aperf/Mperf [%]   |   153.1266 |
+|    Pperf/Aperf [%]   |    99.1406 |
++----------------------+------------+
